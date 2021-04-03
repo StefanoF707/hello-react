@@ -1,16 +1,26 @@
 import React from 'react';
 
-function Post(props) {
-   const like = () => {
-      console.log('ti piace questo post');
+class Post extends React.Component {
+   state = {
+      counter: 0,
+    }
+  
+    increment = () => {
+      this.setState({
+        counter: this.state.counter + 1,
+      })
+    }
+
+   render () {
+      return(
+         <div className="Post">
+            <h2>{this.props.author}</h2>
+            <p>{this.props.body}</p>
+            <button onClick={this.increment}>Like</button>
+            <span>{this.state.counter}</span>
+         </div>
+      )
    }
-   return(
-      <div className="Post">
-         <h2>{props.author}</h2>
-         <p>{props.body}</p>
-         <button onClick={like}>Like</button>
-      </div>
-   )
 }
 
 export default Post;

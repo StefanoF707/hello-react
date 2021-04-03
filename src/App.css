@@ -6,11 +6,28 @@
   border: 1px solid #000;
 }
 
-.Post > button {
-  background-color: lightgray;
-  color: blue;
+:focus {
+  outline: 0;
 }
 
 h1 {
   text-align: center;
+}
+
+.PostsContainer {
+  display: flex;
+}
+
+.Post {
+  background-color: lightblue;
+  width: calc(100% / 4 - 20px);
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.Post > button {
+  background-color: lightgray;
+  color: blue;
+  margin-right: 5px;
+  cursor: pointer;
 }
